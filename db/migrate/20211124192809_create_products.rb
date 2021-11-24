@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.string :sku, unique: true
       t.string :name
       t.monetize :price, currency: { present: false }
-      t.string :supplier_code
+      t.integer :supplier_code
 
       t.timestamps
     end

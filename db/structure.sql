@@ -34,7 +34,7 @@ CREATE TABLE public.products (
     sku character varying,
     name character varying,
     price_cents integer DEFAULT 0 NOT NULL,
-    supplier_code character varying,
+    supplier_code integer,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL
 );
@@ -147,6 +147,21 @@ ALTER TABLE ONLY public.suppliers
 
 
 --
+-- Name: index_suppliers_on_code; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_suppliers_on_code ON public.suppliers USING btree (code);
+
+
+--
+-- Name: products fk_rails_118266736f; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.products
+    ADD CONSTRAINT fk_rails_118266736f FOREIGN KEY (supplier_code) REFERENCES public.suppliers(code);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
@@ -154,6 +169,7 @@ SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
 ('20211120094729'),
-('20211124192809');
+('20211124192809'),
+('20211124195025');
 
 
