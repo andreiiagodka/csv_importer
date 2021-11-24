@@ -16,6 +16,9 @@ gem 'dry-validation', '~> 1.6.0'
 gem 'reform', '~> 2.6.0'
 gem 'reform-rails', '~> 0.2.2'
 
+# Money
+gem 'money-rails', '~>1.12'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4'
 # Use sqlite3 as the database for Active Record
