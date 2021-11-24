@@ -6,7 +6,7 @@ module Supplier::Operation
     step Contract::Persist()
 
     def model(ctx, params:, **)
-      ctx[:model] = Supplier.find_by(code: params[:supplier][:code]) || Supplier.new
+      ctx[:model] = Supplier.find_or_initialize_by(params[:supplier])
     end
   end
 end
