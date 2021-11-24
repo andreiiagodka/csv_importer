@@ -35,6 +35,10 @@ CREATE TABLE public.products (
     name character varying,
     price_cents integer DEFAULT 0 NOT NULL,
     supplier_code integer,
+    column_1 character varying,
+    column_2 character varying,
+    column_3 character varying,
+    column_4 character varying,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL
 );
