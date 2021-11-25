@@ -39,6 +39,7 @@ CREATE TABLE public.products (
     column_2 character varying,
     column_3 character varying,
     column_4 character varying,
+    column_5 character varying,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL
 );
