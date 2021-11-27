@@ -52,6 +52,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.9'
+  gem 'rspec-rails', '~> 5.0.0'
+  gem 'factory_bot_rails', '~> 6.2.0'
 end
 
 group :development do
@@ -71,6 +73,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'shoulda-matchers', '~> 5.0'
+  gem 'simplecov', '~> 0.21.2', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
