@@ -11,17 +11,7 @@ RSpec.describe Product::Operation::Save, type: :operation do
     context 'when create' do
       let(:params) { attributes_for :product, supplier_code: supplier.code }
 
-      it 'asserts operation success' do
-        expect(subject).to be_success
-      end
-
-      it 'asserts model attributes' do
-        expect(model).to have_attributes params
-      end
-
-      it 'asserts Product count' do
-        expect { subject }.to change(Product, :count).from(0).to(1)
-      end
+      include_examples 'successful create operation', Product
     end
 
     context 'when update' do
@@ -29,17 +19,7 @@ RSpec.describe Product::Operation::Save, type: :operation do
 
       let(:params) { attributes_for :product, sku: product.sku, supplier_code: product.supplier_code }
 
-      it 'asserts operation success' do
-        expect(subject).to be_success
-      end
-
-      it 'asserts model attributes' do
-        expect(model).to have_attributes params
-      end
-
-      it 'asserts Product count' do
-        expect { subject }.not_to change(Product, :count)
-      end
+      include_examples 'successful update operation', Product
     end
   end
 
@@ -47,13 +27,7 @@ RSpec.describe Product::Operation::Save, type: :operation do
     context 'when presence errors' do
       let(:params) { {} }
 
-      it 'asserts operation failure' do
-        expect(subject).to be_failure
-      end
-
-      it 'asserts Product count' do
-        expect { subject }.not_to change(Product, :count)
-      end
+      include_examples 'failed save operation', Product
 
       context 'when errors' do
         let(:errors) { subject['contract.default'].errors.messages }
