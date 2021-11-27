@@ -9,6 +9,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.string :column_2
       t.string :column_3
       t.string :column_4
+      t.string :column_5
 
       t.timestamps
     end

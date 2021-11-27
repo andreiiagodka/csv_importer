@@ -22,6 +22,9 @@ gem 'money-rails', '~>1.12'
 # Background jobs
 gem 'sidekiq', '~> 6.2.1'
 
+# Views
+gem 'slim-rails', '~> 3.3.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4'
 # Use sqlite3 as the database for Active Record
