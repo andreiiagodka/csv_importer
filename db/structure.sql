@@ -159,14 +159,6 @@ CREATE UNIQUE INDEX index_suppliers_on_code ON public.suppliers USING btree (cod
 
 
 --
--- Name: products fk_rails_118266736f; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.products
-    ADD CONSTRAINT fk_rails_118266736f FOREIGN KEY (supplier_code) REFERENCES public.suppliers(code);
-
-
---
 -- PostgreSQL database dump complete
 --
 
@@ -174,7 +166,6 @@ SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
 ('20211120094729'),
-('20211124192809'),
-('20211124195025');
+('20211124192809');
 
 
