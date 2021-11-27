@@ -52,6 +52,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.9'
+  gem 'rspec-rails', '~> 5.0.0'
 end
 
 group :development do
