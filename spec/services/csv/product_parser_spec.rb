@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Csv::ProductParser do
-  subject { described_class.new(file) }
+  subject(:service) { described_class.new(file) }
 
   let(:file) { Rails.root.join('spec', 'fixtures', 'products.csv') }
 
-  before { subject.call }
+  before { service.call }
 
   context 'when rows' do
     let(:expected_rows) do
@@ -23,7 +23,7 @@ RSpec.describe Csv::ProductParser do
     end
 
     it 'asserts rows' do
-      expect(subject.rows).to match_array expected_rows
+      expect(service.rows).to match_array expected_rows
     end
   end
 end
