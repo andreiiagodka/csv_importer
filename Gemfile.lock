@@ -66,6 +66,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.9.1)
       msgpack (~> 1.0)
+    brakeman (5.1.1)
     builder (3.2.4)
     capybara (3.36.0)
       addressable
@@ -391,6 +392,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
+  brakeman (~> 5.1.1)
   capybara (>= 3.26)
   dry-validation (~> 1.6.0)
   factory_bot_rails (~> 6.2.0)
