@@ -1,0 +1,38 @@
+require:
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+
+# General
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Naming/VariableNumber:
+  Exclude:
+    - 'app/concepts/product/contract/save.rb'
+    - 'app/services/csv/product_parser.rb'
+    - 'db/migrate/20211124192809_create_products.rb'
+    - 'spec/**/**.*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/MethodLength:
+  Max: 20
+
+# Rails
+
+Rails:
+  Enabled: true
+
+Rails/FilePath:
+  EnforcedStyle: arguments

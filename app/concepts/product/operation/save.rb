@@ -6,7 +6,7 @@ module Product::Operation
     step Contract::Validate()
     step Contract::Persist()
 
-    def modify_params(ctx, params:, **)
+    def modify_params(_ctx, params:, **)
       params[:price_cents] = params.delete(:price).to_money.fractional
     end
 

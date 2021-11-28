@@ -7,7 +7,7 @@ module Shared::Operation
     step Contract::Validate()
     pass :perform_async_worker
 
-    def perform_async_worker(ctx, model:, **)
+    def perform_async_worker(_ctx, model:, **)
       parser = csv_parser.new(model.file)
 
       csv_worker.perform_async(parser)

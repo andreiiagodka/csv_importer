@@ -1,5 +1,5 @@
 RSpec.shared_examples 'successful import operation' do |worker|
-  let(:params) do 
+  let(:params) do
     { file: Faker::File.file_name }
   end
 
