@@ -29,6 +29,9 @@ gem 'slim-rails', '~> 3.3.0'
 gem 'cells-slim', '~> 0.1.1'
 gem 'cells-rails', '~> 0.0.6'
 
+# I18n
+gem 'rails-i18n', '~> 6.0.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4'
 # Use sqlite3 as the database for Active Record
