@@ -152,6 +152,13 @@ ALTER TABLE ONLY public.suppliers
 
 
 --
+-- Name: index_products_on_supplier_code; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_products_on_supplier_code ON public.products USING btree (supplier_code);
+
+
+--
 -- Name: index_suppliers_on_code; Type: INDEX; Schema: public; Owner: -
 --
 

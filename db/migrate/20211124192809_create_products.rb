@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.string :sku, unique: true
       t.string :name
       t.monetize :price, currency: { present: false }
-      t.integer :supplier_code
+      t.integer :supplier_code, index: true
       t.string :column_1
       t.string :column_2
       t.string :column_3
