@@ -1,5 +1,6 @@
 require:
   - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
   NewCops: enable
@@ -36,3 +37,12 @@ Rails:
 
 Rails/FilePath:
   EnforcedStyle: arguments
+
+# RSpec
+
+RSpec/NestedGroups:
+  Max: 5
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/concepts/**/*'
