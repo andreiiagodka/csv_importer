@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Supplier::Contract::Save, type: :contract do
-  subject { described_class.new(Supplier.new) }
+  subject(:contract) { described_class.new(Supplier.new) }
 
   describe 'success' do
     let(:params) { attributes_for(:supplier) }
 
     it 'asserts contract success' do
-      expect(subject.validate(params)).to be_truthy
+      expect(contract.validate(params)).to be_truthy
     end
   end
 
@@ -15,13 +15,13 @@ RSpec.describe Supplier::Contract::Save, type: :contract do
     let(:params) { {} }
 
     it 'asserts contract failure' do
-      expect(subject.validate(params)).to be_falsey
+      expect(contract.validate(params)).to be_falsey
     end
 
     context 'when errors' do
-      let(:errors) { subject.errors.messages }
+      let(:errors) { contract.errors.messages }
 
-      before { subject.validate(params) }
+      before { contract.validate(params) }
 
       context 'when presence errors' do
         let(:expected_errors) { ['must be filled'] }

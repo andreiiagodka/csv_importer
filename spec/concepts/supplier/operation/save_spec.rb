@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Supplier::Operation::Save, type: :operation do
-  subject { described_class.call(params: params) }
+  subject(:operation) { described_class.call(params: params) }
 
-  let(:model) { subject[:model] }
+  let(:model) { operation[:model] }
 
   describe 'success' do
     context 'when create' do
@@ -28,7 +28,7 @@ RSpec.describe Supplier::Operation::Save, type: :operation do
       include_examples 'failed save operation', Supplier
 
       context 'when errors' do
-        let(:errors) { subject['contract.default'].errors.messages }
+        let(:errors) { operation['contract.default'].errors.messages }
 
         let(:expected_errors) { ['must be filled'] }
 

@@ -51,10 +51,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
-  gem 'pry-rails', '~> 0.3.9'
-  gem 'rspec-rails', '~> 5.0.0'
   gem 'factory_bot_rails', '~> 6.2.0'
   gem 'faker', '~> 2.19.0'
+  gem 'pry-rails', '~> 0.3.9'
+  gem 'rspec-rails', '~> 5.0.0'
 end
 
 group :development do
@@ -62,10 +62,21 @@ group :development do
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
+  gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Audit
+  gem 'bundler-audit', '~> 0.9.0.1', require: false
+  gem 'bundler-leak', '~> 0.2', require: false
+  gem 'brakeman', '~> 5.1.1', require: false
+  gem 'fasterer', '~> 0.9', require: false
+  gem 'lol_dba', '~> 2.2', require: false
+  gem 'rails_best_practices', '~> 1.21', require: false
+  gem 'rubocop-performance', '~> 1.11.5', require: false
+  gem 'rubocop-rails', '~> 2.11.3', require: false
+  gem 'rubocop-rspec', '~> 2.4.0', require: false
 end
 
 group :test do
@@ -73,10 +84,10 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'simplecov', '~> 0.21.2', require: false
+  gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
