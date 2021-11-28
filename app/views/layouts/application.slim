@@ -10,5 +10,9 @@ html
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    = yield
+    .row
+      .container
+        .col-md-6.offset-md-3
+          == cell(NavbarCell, nil)
+          = yield
 
