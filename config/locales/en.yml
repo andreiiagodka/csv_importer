@@ -1,5 +1,6 @@
 en:
   title: CSV Importer
+  welcome: Welcome to CSV Importer!
   supplier:
     title: Supplier
     no_record: There is no Supplier yet.
