@@ -1,0 +1,21 @@
+.row
+  .container.
+    - if model.any?
+      table.table.table-hover
+        thead
+          tr.table-light
+            th.text-center = I18n.t('product.attributes.sku')
+            th.text-center = I18n.t('product.attributes.name')
+            th.text-center = I18n.t('product.attributes.price')
+            th.text-center = I18n.t('product.attributes.supplier_code')
+            th.text-center = I18n.t('product.attributes.column_1')
+            th.text-center = I18n.t('product.attributes.column_2')
+            th.text-center = I18n.t('product.attributes.column_3')
+            th.text-center = I18n.t('product.attributes.column_4')
+            th.text-center = I18n.t('product.attributes.column_5')
+        tbody
+          = cell(Product::Cell::Item, collection: model)
+      = cell(::PagyCell, nil, pagy: options[:pagy])
+    - else
+      p.lead.text-center
+        = I18n.t('product.no_record')
