@@ -33,6 +33,9 @@ gem 'trailblazer-cells', '~> 0.0.3'
 # I18n
 gem 'rails-i18n', '~> 6.0.0'
 
+# Pagination
+gem 'pagy', '~> 5.6'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4'
 # Use sqlite3 as the database for Active Record
