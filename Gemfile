@@ -28,6 +28,7 @@ gem 'slim-rails', '~> 3.3.0'
 # Cells
 gem 'cells-rails', '~> 0.0.6'
 gem 'cells-slim', '~> 0.1.1'
+gem 'trailblazer-cells', '~> 0.0.3'
 
 # I18n
 gem 'rails-i18n', '~> 6.0.0'
