@@ -1,14 +1,14 @@
 nav.navbar.navbar-expand-lg.navbar-light style='background-color: #e3f2fd;'
   .container-fluid
-    a.navbar-brand.lead
+    a.navbar-brand.lead href=root_path
       = t('title')
     button.navbar-toggler type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'
       span.navbar-toggler-icon
     .collapse.navbar-collapse id='navbarSupportedContent'
       ul.navbar-nav.me-auto.mb-2.mb-lg-0
         li.nav-item
-          a.nav-link
+          a.nav-link href=suppliers_path
             = t('supplier.title')
         li.nav-item
-          a.nav-link
+          a.nav-link href=products_path
             = t('product.title')
