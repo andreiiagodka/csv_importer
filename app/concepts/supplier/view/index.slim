@@ -1,0 +1,14 @@
+.row
+  .container.
+    - if model.any?
+      table.table.table-hover
+        thead
+          tr.table-light
+            th.text-center = I18n.t('supplier.attributes.code')
+            th.text-center = I18n.t('supplier.attributes.name')
+        tbody
+          = cell(Supplier::Cell::Item, collection: model)
+      = cell(::PagyCell, nil, pagy: options[:pagy])
+    - else
+      p.lead.text-center
+        = I18n.t('supplier.no_record')
