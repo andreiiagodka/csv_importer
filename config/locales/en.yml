@@ -1,7 +1,10 @@
 en:
   title: CSV Importer
   welcome: Welcome to CSV Importer!
-  import: Import
+  import: 
+    title: Import
+    success: Import started succesfully!
+    failure: Import failed.
   supplier:
     title: Supplier
     no_record: There is no Supplier yet.

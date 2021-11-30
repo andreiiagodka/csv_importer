@@ -10,6 +10,8 @@ import "channels"
 import 'bootstrap'
 import 'bootstrap/dist/js/bootstrap'
 
+global.toastr = require('toastr')
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
