@@ -1,9 +1,5 @@
-class PagyCell < Cell::ViewModel
+class PagyCell < ApplicationCell
   include Pagy::Frontend
-
-  def show
-    render
-  end
 
   private
 
