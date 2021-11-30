@@ -26,10 +26,15 @@ Naming/VariableNumber:
 
 Metrics/BlockLength:
   Exclude:
+    - 'config/initializers/*'
     - 'spec/**/*'
 
 Metrics/MethodLength:
   Max: 20
+
+Layout/LineLength:
+  Exclude:
+    - 'config/initializers/*'
 
 # Rails
 

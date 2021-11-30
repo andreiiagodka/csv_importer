@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 
   def import
     run Product::Operation::Import
-    
+
     if result.success?
       flash[:success] = I18n.t('import.success')
     else

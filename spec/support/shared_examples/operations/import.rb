@@ -1,20 +1,20 @@
-RSpec.shared_examples 'successful import operation' do |worker|
-  let(:params) do
-    { file: Faker::File.file_name }
-  end
-
-  before do
-    allow(worker).to receive(:perform_async).and_return(nil)
-  end
-
+RSpec.shared_examples 'successful import operation' do |model_name|
   it 'asserts operation success' do
     expect(operation).to be_success
+  end
+
+  it 'asserts model count' do
+    expect { operation }.to change(model_name, :count).from(0).to(1)
   end
 
   context 'when model' do
     let(:model) { operation[:model] }
 
-    let(:expected_model) { OpenStruct.new(file: params[:file]) }
+    let(:expected_model) do
+      model = ImportFile.new
+      model.file = params[:import_file][:file]
+      model
+    end
 
     it 'asserts model' do
       expect(operation[:model]).to eq expected_model
@@ -24,7 +24,7 @@ end
 
 RSpec.shared_examples 'failed import operation' do
   context 'when presence errors' do
-    let(:params) { {} }
+    let(:file) { nil }
 
     it 'asserts operation failure' do
       expect(operation).to be_failure
