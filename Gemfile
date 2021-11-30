@@ -11,6 +11,7 @@ gem 'trailblazer-rails', '~> 2.1.7'
 
 # Dry-rb
 gem 'dry-validation', '~> 1.6.0'
+gem 'dry-struct', '~> 1.4.0'
 
 # Reform
 gem 'reform', '~> 2.6.0'
@@ -26,6 +27,7 @@ gem 'sidekiq', '~> 6.2.1'
 gem 'slim-rails', '~> 3.3.0'
 
 # Cells
+gem 'cells-erb', '~> 0.1.0'
 gem 'cells-rails', '~> 0.0.6'
 gem 'cells-slim', '~> 0.1.1'
 gem 'trailblazer-cells', '~> 0.0.3'
