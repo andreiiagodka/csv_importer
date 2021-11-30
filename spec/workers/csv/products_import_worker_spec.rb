@@ -7,7 +7,19 @@ RSpec.describe Csv::ProductsImportWorker, type: :worker do
 
   before { create :supplier, :import }
 
-  it 'asserts Product count' do
-    expect { worker }.to change(Product, :count).from(0).to(1)
+  context 'when sidekiq testing fake' do
+    before { Sidekiq::Testing.fake! }
+
+    it 'asserts jobs count' do
+      expect { worker }.to change(described_class.jobs, :size).by(1)
+    end
+  end
+
+  context 'when sidekiq testing inline' do
+    before { Sidekiq::Testing.inline! }
+
+    it 'asserts Product count' do
+      expect { worker }.to change(Product, :count).from(0).to(1)
+    end
   end
 end
