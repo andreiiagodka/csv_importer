@@ -9,9 +9,7 @@ module Shared::Operation
     pass :perform_async_worker
 
     def perform_async_worker(_ctx, model:, **)
-      parser = csv_parser.new(model.file)
-
-      csv_worker.perform_async(parser)
+      csv_worker.perform_async(model.file)
     end
   end
 end

@@ -1,2 +1,1 @@
-class ImportFile < Struct.new(:file)
-end
+ImportFile = Struct.new(:file)
