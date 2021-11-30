@@ -1,4 +1,4 @@
 module Product::Cell
-  class Index < Trailblazer::Cell
+  class Index < ApplicationTrailblazerCell
   end
 end
