@@ -2,13 +2,10 @@ module Shared::Operation
   class Import < Trailblazer::Operation
     class_attribute :csv_parser, :csv_worker
 
-    class Present < Trailblazer::Operation
-      step Model(ImportFile, :new)
-      step Contract::Build(constant: Shared::Contract::Import)
-    end
-
-    step Subprocess(Present)
-    step Contract::Validate()
+    step Model(ImportFile, :new)
+    step Contract::Build(constant: Shared::Contract::Import)
+    step Contract::Validate(key: :import_file)
+    step Contract::Persist(method: :sync)
     pass :perform_async_worker
 
     def perform_async_worker(_ctx, model:, **)
