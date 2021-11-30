@@ -10,8 +10,8 @@ gem 'pg', '~> 1.2.3'
 gem 'trailblazer-rails', '~> 2.1.7'
 
 # Dry-rb
-gem 'dry-validation', '~> 1.6.0'
 gem 'dry-struct', '~> 1.4.0'
+gem 'dry-validation', '~> 1.6.0'
 
 # Reform
 gem 'reform', '~> 2.6.0'
