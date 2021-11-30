@@ -25,6 +25,21 @@ gem 'sidekiq', '~> 6.2.1'
 # Views
 gem 'slim-rails', '~> 3.3.0'
 
+# Cells
+gem 'cells-erb', '~> 0.1.0'
+gem 'cells-rails', '~> 0.0.6'
+gem 'cells-slim', '~> 0.1.1'
+gem 'trailblazer-cells', '~> 0.0.3'
+
+# I18n
+gem 'rails-i18n', '~> 6.0.0'
+
+# Pagination
+gem 'pagy', '~> 5.6'
+
+# Simple form
+gem 'simple_form', '~> 5.1.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4'
 # Use sqlite3 as the database for Active Record

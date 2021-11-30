@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'welcome#index'
+
+  resources :suppliers, only: :index
+  post 'suppliers/import', to: 'suppliers#import'
+
+  resources :products, only: :index
+  post 'products/import', to: 'products#import'
 end
