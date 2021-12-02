@@ -5,10 +5,12 @@ module Csv
     class_attribute :operation
 
     def perform(rows)
-      rows.each do |attributes|
-        params = attributes.transform_keys(&:to_sym)
+      ActiveRecord::Base.transaction do
+        rows.each do |attributes|
+          params = attributes.transform_keys(&:to_sym)
 
-        operation.call(params: params)
+          operation.call(params: params)
+        end
       end
     end
   end
