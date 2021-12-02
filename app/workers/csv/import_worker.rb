@@ -7,7 +7,7 @@ module Csv
     def perform(rows)
       rows.each do |attributes|
         params = attributes.transform_keys(&:to_sym)
-         
+
         operation.call(params: params)
       end
     end

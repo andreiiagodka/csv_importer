@@ -100,11 +100,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'cucumber-rails', '~> 2.4.0', require: false
+  gem 'database_cleaner', '~> 2.0.1'
   gem 'rspec-sidekiq', '~> 3.1.0'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'simplecov', '~> 0.21.2', require: false
   gem 'webdrivers'
-  gem 'database_cleaner', '~> 2.0.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

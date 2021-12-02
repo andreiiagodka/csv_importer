@@ -50,7 +50,3 @@ And('I attach {string} file to import form') do |file_name|
     input.set(file)
   end
 end
-
-
-
-
