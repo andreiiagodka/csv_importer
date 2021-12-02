@@ -14,7 +14,7 @@ RSpec.describe Product::Operation::Import, type: :operation do
   before { create :supplier, :import }
 
   describe 'success' do
-    include_examples 'successful import operation', Product
+    include_examples 'successful import operation', Product, Csv::ProductParser
   end
 
   describe 'failure' do

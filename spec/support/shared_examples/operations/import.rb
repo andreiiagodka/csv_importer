@@ -1,10 +1,23 @@
-RSpec.shared_examples 'successful import operation' do |model_name|
+RSpec.shared_examples 'successful import operation' do |model_name, csv_parser|
   it 'asserts operation success' do
     expect(operation).to be_success
   end
 
   it 'asserts model count' do
     expect { operation }.to change(model_name, :count).from(0).to(1)
+  end
+
+  context 'when rows' do
+    let(:expected_rows) do
+      parser = csv_parser.new(file)
+      parser.call
+
+      parser.rows
+    end
+
+    it 'asserts rows' do
+      expect(subject[:rows]).to match_array expected_rows
+    end
   end
 
   context 'when model' do

@@ -12,7 +12,7 @@ RSpec.describe Supplier::Operation::Import, type: :operation do
   let(:file) { Rails.root.join('spec', 'fixtures', 'suppliers.csv') }
 
   describe 'success' do
-    include_examples 'successful import operation', Supplier
+    include_examples 'successful import operation', Supplier, Csv::SupplierParser
   end
 
   describe 'failure' do
