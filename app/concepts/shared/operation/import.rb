@@ -6,10 +6,18 @@ module Shared::Operation
     step Contract::Build(constant: Shared::Contract::Import)
     step Contract::Validate(key: :import_file)
     step Contract::Persist(method: :sync)
-    pass :perform_async_worker
+    step :parse_file
+    pass :import_rows
 
-    def perform_async_worker(_ctx, model:, **)
-      csv_worker.perform_async(model.file)
+    def parse_file(ctx, model:, **)
+      parser = csv_parser.new(model.file)
+      parser.call
+
+      ctx[:rows] = parser.rows
+    end
+
+    def import_rows(_ctx, rows:, **)
+      csv_worker.perform_async(rows)
     end
   end
 end

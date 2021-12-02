@@ -9,7 +9,5 @@ FactoryBot.define do
     column_3 { Faker::Lorem.word }
     column_4 { Faker::Lorem.word }
     column_5 { Faker::Lorem.word }
-
-    association :supplier
   end
 end

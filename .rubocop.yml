@@ -17,6 +17,10 @@ Style/ClassAndModuleChildren:
 Style/Documentation:
   Enabled: false
 
+Style/MixinUsage:
+  Exclude:
+    - 'features/support/env.rb'
+
 Naming/VariableNumber:
   Exclude:
     - 'app/concepts/product/contract/save.rb'
@@ -27,6 +31,7 @@ Naming/VariableNumber:
 Metrics/BlockLength:
   Exclude:
     - 'config/initializers/*'
+    - 'config/environments/*'
     - 'spec/**/*'
 
 Metrics/MethodLength:
