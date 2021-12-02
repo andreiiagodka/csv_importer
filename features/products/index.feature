@@ -51,4 +51,3 @@ Feature: Products index page
   Scenario: Products are not present
     When I visit Products index page
     Then I can see text 'There is no Product yet.'
-    

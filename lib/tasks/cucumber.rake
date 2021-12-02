@@ -58,5 +58,4 @@ unless ARGV.any? { |a| a =~ /^gems/ } # Don't load anything when running the gem
       abort 'Cucumber rake task is not available. Be sure to install cucumber as a gem or plugin'
     end
   end
-
 end

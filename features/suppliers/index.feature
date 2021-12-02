@@ -21,4 +21,3 @@ Feature: Suppliers index page
   Scenario: Suppliers are not present
     When I visit Suppliers index page
     Then I can see text 'There is no Supplier yet.'
-    
