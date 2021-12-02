@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
   def index
-    pagy, suppliers = pagy(Product.all)
-
-    render cell(Product::Cell::Index, suppliers, pagy: pagy)
+    pagy, products = pagy(Product.all)
+    
+    render cell(Product::Cell::Index, products, pagy: pagy)
   end
 
   def import
