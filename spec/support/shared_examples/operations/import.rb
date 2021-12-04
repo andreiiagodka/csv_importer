@@ -7,16 +7,11 @@ RSpec.shared_examples 'successful import operation' do |model_name, csv_parser|
     expect { operation }.to change(model_name, :count).from(0).to(1)
   end
 
-  context 'when rows' do
-    let(:expected_rows) do
-      parser = csv_parser.new(file)
-      parser.call
-
-      parser.rows
-    end
+  context 'when chunks' do
+    let(:expected_chunks) { csv_parser.new(file).call }
 
     it 'asserts rows' do
-      expect(subject[:rows]).to match_array expected_rows
+      expect(subject[:chunks]).to match_array expected_chunks
     end
   end
 

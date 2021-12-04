@@ -10,14 +10,11 @@ module Shared::Operation
     pass :import_rows
 
     def parse_file(ctx, model:, **)
-      parser = csv_parser.new(model.file)
-      parser.call
-
-      ctx[:rows] = parser.rows
+      ctx[:chunks] = csv_parser.new(model.file).call
     end
 
-    def import_rows(_ctx, rows:, **)
-      csv_worker.perform_async(rows)
+    def import_rows(_ctx, chunks:, **)
+      csv_worker.perform_async(chunks)
     end
   end
 end

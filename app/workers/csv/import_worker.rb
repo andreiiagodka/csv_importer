@@ -4,13 +4,19 @@ module Csv
 
     class_attribute :operation
 
-    def perform(rows)
+    def perform(chunks)
       ActiveRecord::Base.transaction do
-        rows.each do |attributes|
-          params = attributes.transform_keys(&:to_sym)
+        Parallel.each(chunks) { |chunk| create_records(chunk) }
+      end
+    end
 
-          operation.call(params: params)
-        end
+    private
+
+    def create_records(chunk)
+      chunk.each do |attributes|
+        params = attributes.transform_keys(&:to_sym)
+
+        operation.call(params: params)
       end
     end
   end
