@@ -411,6 +411,7 @@ GEM
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (>= 3.0, < 5.0)
+    smarter_csv (1.2.9)
     spring (3.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -532,6 +533,7 @@ DEPENDENCIES
   simple_form (~> 5.1.0)
   simplecov (~> 0.21.2)
   slim-rails (~> 3.3.0)
+  smarter_csv (~> 1.2.9)
   spring
   sqlite3 (~> 1.4)
   trailblazer-cells (~> 0.0.3)
