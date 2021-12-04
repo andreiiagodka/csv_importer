@@ -1,20 +1,21 @@
-require 'csv'
-
 module Csv
   class Parser
     class_attribute :headers
 
-    attr_reader :rows
-
     def initialize(file)
       @file = file
-      @rows = []
     end
 
     def call
-      CSV.foreach(@file, col_sep: '¦') do |row|
-        rows << headers.zip(row).to_h
-      end
+      SmarterCSV.process(
+        @file,
+        {
+          headers_in_file: false,
+          user_provided_headers: headers,
+          chunk_size: 1000,
+          col_sep: '¦'
+        }
+      )
     end
   end
 end

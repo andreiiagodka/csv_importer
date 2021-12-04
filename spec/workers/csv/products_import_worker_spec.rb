@@ -1,14 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Csv::ProductsImportWorker, type: :worker do
-  subject(:worker) { described_class.perform_async(rows) }
+  subject(:worker) { described_class.perform_async(chunks) }
 
-  let(:rows) do
+  let(:chunks) do
     file = Rails.root.join('spec', 'fixtures', 'products.csv')
-    parser = Csv::ProductParser.new(file)
-    parser.call
 
-    parser.rows
+    Csv::ProductParser.new(file).call
   end
 
   before { create :supplier, :import }

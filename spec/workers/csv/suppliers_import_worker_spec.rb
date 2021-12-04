@@ -1,14 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Csv::SuppliersImportWorker, type: :worker do
-  subject(:worker) { described_class.perform_async(rows) }
+  subject(:worker) { described_class.perform_async(chunks) }
 
-  let(:rows) do
+  let(:chunks) do
     file = Rails.root.join('spec', 'fixtures', 'suppliers.csv')
-    parser = Csv::SupplierParser.new(file)
-    parser.call
 
-    parser.rows
+    Csv::SupplierParser.new(file).call
   end
 
   it 'asserts Supplier count' do

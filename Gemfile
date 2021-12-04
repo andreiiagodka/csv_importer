@@ -65,6 +65,12 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+# CSV
+gem 'smarter_csv', '~> 1.2.9'
+
+# Parallel
+gem 'parallel', '~> 1.20.1'
+
 group :development, :test do
   gem 'factory_bot_rails', '~> 6.2.0'
   gem 'faker', '~> 2.19.0'
