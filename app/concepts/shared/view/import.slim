@@ -1,0 +1,8 @@
+.row.mt-3
+  .container.
+    = simple_form_for :import_file, url: options[:url],
+                                    wrapper: :inline_form, 
+                                    html: { id: :import_file, class: 'row row-cols-lg-auto g-3 align-items-center justify-content-center' } do |f|
+      = f.input :file, as: :file, 
+                       label: false
+      = f.button :submit, t('import.title'), class: 'btn btn-info'

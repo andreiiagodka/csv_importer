@@ -1,0 +1,59 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  NewCops: enable
+
+# General
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/MixinUsage:
+  Exclude:
+    - 'features/support/env.rb'
+
+Naming/VariableNumber:
+  Exclude:
+    - 'app/concepts/product/contract/save.rb'
+    - 'app/services/csv/product_parser.rb'
+    - 'db/migrate/20211124192809_create_products.rb'
+    - 'spec/**/**.*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/initializers/*'
+    - 'config/environments/*'
+    - 'spec/**/*'
+
+Metrics/MethodLength:
+  Max: 20
+
+Layout/LineLength:
+  Exclude:
+    - 'config/initializers/*'
+
+# Rails
+
+Rails:
+  Enabled: true
+
+Rails/FilePath:
+  EnforcedStyle: arguments
+
+# RSpec
+
+RSpec/NestedGroups:
+  Max: 5
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/concepts/**/*'

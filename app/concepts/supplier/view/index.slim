@@ -1,0 +1,15 @@
+= cell(Shared::Cell::Import, nil, url: suppliers_import_path)
+.row.mt-3
+  .container.
+    - if model.any?
+      table.table.table-hover
+        thead
+          tr.table-light
+            th.text-center = t('supplier.attributes.code')
+            th.text-center = t('supplier.attributes.name')
+        tbody
+          = cell(Supplier::Cell::Item, collection: model)
+      = cell(::PagyCell, nil, pagy: options[:pagy])
+    - else
+      p.lead.text-center
+        = t('supplier.no_record')

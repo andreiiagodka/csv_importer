@@ -1,0 +1,1 @@
+ImportFile = Struct.new(:file)

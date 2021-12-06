@@ -1,0 +1,2 @@
+class NavbarCell < ApplicationCell
+end
